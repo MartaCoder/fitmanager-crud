@@ -6,6 +6,6 @@ def conectar():
         port="5432",
         database="bdfit",
         user="postgres",
-        password="" //coloque a senha do banco de dados 
+        password="" #coloque a senha do banco de dados 
     )
     return conexao
