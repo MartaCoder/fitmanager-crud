@@ -24,7 +24,7 @@ def menu_aluno():
         print("2 - Listar")
         print("3 - Atualizar")
         print("4 - Deletar")
-        print("5 - Relatorio aluno + plano (JOIN)")
+        print("5 - Relatorio aluno + plano")
         print("0 - Voltar")
         opcao = input("Opcao: ")
 
@@ -230,7 +230,7 @@ def menu_pagamento():
         print("2 - Listar")
         print("3 - Atualizar")
         print("4 - Deletar")
-        print("5 - Relatorio total por status (GROUP BY)")
+        print("5 - Relatorio total por status")
         print("0 - Voltar")
         opcao = input("Opcao: ")
 
