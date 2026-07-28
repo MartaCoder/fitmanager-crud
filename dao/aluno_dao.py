@@ -43,8 +43,35 @@ class AlunoDAO:
     def atualizar(self, aluno):
         conexao = conectar()
         cursor = conexao.cursor()
-        sql = "UPDATE Aluno SET nome=%s, email=%s, numero=%s, cep=%s, bairro=%s, rua=%s WHERE id_aluno=%s"
-        cursor.execute(sql, (aluno.nome, aluno.email, aluno.numero, aluno.cep, aluno.bairro, aluno.rua, aluno.id_aluno))
+
+        sql = """
+        UPDATE Aluno
+        SET nome = %s,
+            data_nascimento = %s,
+            email = %s,
+            cpf = %s,
+            numero = %s,
+            cep = %s,
+            bairro = %s,
+            rua = %s
+        WHERE id_aluno = %s
+    """
+
+        cursor.execute(
+        sql,
+        (
+            aluno.nome,
+            aluno.data_nascimento,
+            aluno.email,
+            aluno.cpf,
+            aluno.numero,
+            aluno.cep,
+            aluno.bairro,
+            aluno.rua,
+            aluno.id_aluno
+        )
+    )
+
         conexao.commit()
         cursor.close()
         conexao.close()

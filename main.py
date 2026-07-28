@@ -49,18 +49,47 @@ def menu_aluno():
         elif opcao == "3":
             id_aluno = int(input("Id do aluno: "))
             aluno = aluno_dao.buscar_por_id(id_aluno)
+
             if aluno is None:
                 print("Aluno nao encontrado")
                 continue
-            print("Deixe em branco pra nao alterar")
-            nome = input("Nome novo: ")
+
+            print("Deixe em branco para nao alterar")
+
+            nome = input(f"Nome novo [{aluno.nome}]: ")
             if nome != "":
                 aluno.nome = nome
-            email = input("Email novo: ")
+
+            data_nascimento = input(f"Data de nascimento nova [{aluno.data_nascimento}] (AAAA-MM-DD): ")
+            if data_nascimento != "":
+                aluno.data_nascimento = data_nascimento
+
+            email = input(f"Email novo [{aluno.email}]: ")
             if email != "":
                 aluno.email = email
+
+            cpf = input(f"CPF novo [{aluno.cpf}]: ")
+            if cpf != "":
+                aluno.cpf = cpf
+
+            numero = input(f"Numero novo [{aluno.numero}]: ")
+            if numero != "":
+                aluno.numero = numero
+
+            cep = input(f"CEP novo [{aluno.cep}]: ")
+            if cep != "":
+                aluno.cep = cep
+
+            bairro = input(f"Bairro novo [{aluno.bairro}]: ")
+            if bairro != "":
+                aluno.bairro = bairro
+
+            rua = input(f"Rua nova [{aluno.rua}]: ")
+            if rua != "":
+                aluno.rua = rua
+
             aluno_dao.atualizar(aluno)
-            print("Atualizado")
+            print("Aluno atualizado com sucesso")
 
         elif opcao == "4":
             id_aluno = int(input("Id do aluno: "))
